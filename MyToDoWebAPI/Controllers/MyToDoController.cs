@@ -7,9 +7,17 @@ using System.Threading.Tasks;
 
 namespace MyToDoWebAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/todo-items")]
     [ApiController]
     public class MyToDoController : ControllerBase
     {
+        private readonly static List<string> items = new List<string>
+        {
+            "Programming",
+            "More Programming",
+            "A lot more Programming"
+        };
+
+       
     }
 }

@@ -15,6 +15,8 @@ namespace MyToDoWebAPI
 {
     public class Startup
     {
+
+        private readonly string myAllowSpecificOrigins = "_myAllowSpecificOrigins";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -31,6 +33,11 @@ namespace MyToDoWebAPI
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "MyToDoWebAPI", Version = "v1" });
             });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy(myAllowSpecificOrigins, x => x.AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -42,8 +49,11 @@ namespace MyToDoWebAPI
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MyToDoWebAPI v1"));
             }
-
+            app.UseCors(myAllowSpecificOrigins);
             app.UseRouting();
+
+
+
 
             app.UseAuthorization();
 

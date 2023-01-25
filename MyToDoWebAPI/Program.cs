@@ -1,26 +1,47 @@
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.OpenApi.Models;
 
-namespace MyToDoWebAPI
+string corsKey = "mySecretCorsKey";
+var builder = WebApplication.CreateBuilder(args);
+var configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
+
+// Add services to the container.
+builder.Services.AddControllers();
+
+// Pre defined services
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen(x =>
 {
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
-            CreateHostBuilder(args).Build().Run();
-        }
+    x.SwaggerDoc("v1", new OpenApiInfo { Title = "TestSwagger", Version = "v1" });
+});
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
-    }
+//Db Context here
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(corsKey,
+        x => x.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader()
+              );
+});
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
+app.UseCors(corsKey);
+app.UseHttpsRedirection();
+app.UseStaticFiles();
+
+app.UseRouting();
+
+app.UseAuthorization();
+
+app.MapControllers();
+
+app.Run();

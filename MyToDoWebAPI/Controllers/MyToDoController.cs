@@ -17,6 +17,11 @@ namespace MyToDoWebAPI.Controllers
             "More Programming",
             "A lot more Programming"
         };
+        [HttpGet("all")]
+        public IActionResult GetAllToDos()
+        {
+            return Ok(items);
+        }
 
        
     }

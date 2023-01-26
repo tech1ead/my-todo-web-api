@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "MyToDoWebAPI": {
+    "Development": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

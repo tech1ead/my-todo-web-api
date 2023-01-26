@@ -1,8 +1,14 @@
-﻿using Microsoft.OpenApi.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
+using MyToDoWebApi.Database.Context;
+using MyToDoWebApi.Repository.UnitOfWork;
+using MyToDoWebApi.Service.CategoryService;
+using MyToDoWebApi.Service.ToDoService;
 
 string corsKey = "mySecretCorsKey";
 var builder = WebApplication.CreateBuilder(args);
 var configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
+
 
 // Add services to the container.
 builder.Services.AddControllers();
@@ -15,7 +21,17 @@ builder.Services.AddSwaggerGen(x =>
     x.SwaggerDoc("v1", new OpenApiInfo { Title = "TestSwagger", Version = "v1" });
 });
 
+//builder.Services.AddTransient<IAppSettingsService<ConnectionStringConfig>, AppSettingsService<ConnectionStringConfig>>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<IToDoService, ToDoService>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
+
 //Db Context here
+builder.Services.AddDbContext<ToDoContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ToDoConnection"))
+);
+
+
 
 builder.Services.AddCors(options =>
 {
@@ -27,6 +43,9 @@ builder.Services.AddCors(options =>
 });
 
 var app = builder.Build();
+
+var scope = app.Services.CreateScope();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MyToDoWebApi.Model\MyToDoWebApi.Model.csproj" />
+    <ProjectReference Include="..\MyToDoWebApi.Repository\MyToDoWebApi.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

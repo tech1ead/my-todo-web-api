@@ -1,9 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31727.386
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyToDoWebAPI", "MyToDoWebAPI\MyToDoWebAPI.csproj", "{774123DA-D6A5-4E26-A36E-2E37A39D6AA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyToDoWebApi.Database", "MyToDoWebApi.Database\MyToDoWebApi.Database.csproj", "{55E84E0A-43C6-449F-A54B-A0319A89BB0D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyToDoWebApi.Repository", "MyToDoWebApi.Repository\MyToDoWebApi.Repository.csproj", "{8DE8FC56-F0A6-4602-8343-343E7DBF72A9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyToDoWebApi.Service", "MyToDoWebApi.Service\MyToDoWebApi.Service.csproj", "{C7D48DFC-B365-4956-8594-D39A1D86416E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyToDoWebApi.Model", "MyToDoWebApi.Model\MyToDoWebApi.Model.csproj", "{C3DE2A53-EBBE-4D19-9F99-C23FAA28F142}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyToDoWebApi.Api", "MyToDoWebApi.Api\MyToDoWebApi.Api.csproj", "{22ACFF1B-4EE7-43EB-B890-574F630A3959}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +19,26 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{774123DA-D6A5-4E26-A36E-2E37A39D6AA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{774123DA-D6A5-4E26-A36E-2E37A39D6AA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{774123DA-D6A5-4E26-A36E-2E37A39D6AA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{774123DA-D6A5-4E26-A36E-2E37A39D6AA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55E84E0A-43C6-449F-A54B-A0319A89BB0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55E84E0A-43C6-449F-A54B-A0319A89BB0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55E84E0A-43C6-449F-A54B-A0319A89BB0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55E84E0A-43C6-449F-A54B-A0319A89BB0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DE8FC56-F0A6-4602-8343-343E7DBF72A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DE8FC56-F0A6-4602-8343-343E7DBF72A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DE8FC56-F0A6-4602-8343-343E7DBF72A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DE8FC56-F0A6-4602-8343-343E7DBF72A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7D48DFC-B365-4956-8594-D39A1D86416E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7D48DFC-B365-4956-8594-D39A1D86416E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7D48DFC-B365-4956-8594-D39A1D86416E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7D48DFC-B365-4956-8594-D39A1D86416E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3DE2A53-EBBE-4D19-9F99-C23FAA28F142}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3DE2A53-EBBE-4D19-9F99-C23FAA28F142}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3DE2A53-EBBE-4D19-9F99-C23FAA28F142}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3DE2A53-EBBE-4D19-9F99-C23FAA28F142}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22ACFF1B-4EE7-43EB-B890-574F630A3959}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22ACFF1B-4EE7-43EB-B890-574F630A3959}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22ACFF1B-4EE7-43EB-B890-574F630A3959}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22ACFF1B-4EE7-43EB-B890-574F630A3959}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

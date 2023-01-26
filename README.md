@@ -1,6 +1,6 @@
 # MyToDoWebApi
 
-Implementation of a ASP.NET Web API using .net6, Entity Framework Core 7.0.2 and the following patterns:
+Implementation of a ASP.NET Web API with Code First approach using .net6, Entity Framework Core 7.0.2 and the following patterns:
 - UnitOfWork Pattern
 - Repository Service Pattern
 ## appsettings.json

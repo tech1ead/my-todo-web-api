@@ -12,8 +12,8 @@ using MyToDoWebApi.Database.Context;
 namespace MyToDoWebApi.Database.Migrations
 {
     [DbContext(typeof(ToDoContext))]
-    [Migration("20230126094559_Init")]
-    partial class Init
+    [Migration("20230129114806_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

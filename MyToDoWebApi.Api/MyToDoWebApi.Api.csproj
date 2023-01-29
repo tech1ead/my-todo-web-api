@@ -6,17 +6,22 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.2">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
 	</ItemGroup>
-
 	<ItemGroup>
 	  <ProjectReference Include="..\MyToDoWebApi.Database\MyToDoWebApi.Database.csproj" />
 	  <ProjectReference Include="..\MyToDoWebApi.Model\MyToDoWebApi.Model.csproj" />
 	  <ProjectReference Include="..\MyToDoWebApi.Repository\MyToDoWebApi.Repository.csproj" />
 	  <ProjectReference Include="..\MyToDoWebApi.Service\MyToDoWebApi.Service.csproj" />
 	</ItemGroup>
-
 	<ItemGroup>
+	  <Content Update="appsettings.Development.json">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
 	  <Content Update="appsettings.json">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </Content>
